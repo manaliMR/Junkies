@@ -21,15 +21,23 @@ class ViewController: UIViewController {
     }
     
     @IBAction func FoodplaceOne(_ sender: Any) {
+        
+        performSegue(withIdentifier: "maps", sender: self)
     }
     
     @IBAction func FoodplaceTwo(_ sender: Any) {
+        
+        performSegue(withIdentifier: "maps", sender: self)
     }
     
     @IBAction func FoodplaceThree(_ sender: Any) {
+        
+        performSegue(withIdentifier: "maps", sender: self)
     }
     
     @IBAction func FoodplaceFour(_ sender: Any) {
+        
+        performSegue(withIdentifier: "maps", sender: self)
     }
     
 }
