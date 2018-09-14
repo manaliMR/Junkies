@@ -20,22 +20,34 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.isNavigationBarHidden = true
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        self.navigationController?.isNavigationBarHidden = false
+    }
+    
     @IBAction func FoodplaceOne(_ sender: Any) {
+        // TimHortons
         
         performSegue(withIdentifier: "maps", sender: self)
     }
     
     @IBAction func FoodplaceTwo(_ sender: Any) {
+        // McDonalds
         
         performSegue(withIdentifier: "maps", sender: self)
     }
     
     @IBAction func FoodplaceThree(_ sender: Any) {
+        // Subway
         
         performSegue(withIdentifier: "maps", sender: self)
     }
     
     @IBAction func FoodplaceFour(_ sender: Any) {
+        // Burrito
         
         performSegue(withIdentifier: "maps", sender: self)
     }

@@ -36,7 +36,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hcq-dc-7sH">
                                 <rect key="frame" x="225" y="374" width="100" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Demetre"/>
+                                <state key="normal" title="Burrito"/>
                                 <connections>
                                     <action selector="FoodplaceFour:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RJU-eK-dlP"/>
                                 </connections>
@@ -70,10 +70,10 @@
             </objects>
             <point key="canvasLocation" x="1076" y="133.5832083958021"/>
         </scene>
-        <!--View Controller-->
+        <!--Map View Controller-->
         <scene sceneID="xjP-gj-rQS">
             <objects>
-                <viewController id="1vc-0Y-c4n" sceneMemberID="viewController">
+                <viewController id="1vc-0Y-c4n" customClass="MapViewController" customModule="Junkies" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="I7S-kF-sBE">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -106,6 +106,9 @@
                         <viewLayoutGuide key="safeArea" id="Ila-kO-ym6"/>
                     </view>
                     <navigationItem key="navigationItem" id="LmG-WG-Wqt"/>
+                    <connections>
+                        <outlet property="mapView" destination="fju-Ph-Fy6" id="QCy-U6-38F"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ufx-cv-Ko9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

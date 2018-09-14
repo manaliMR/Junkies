@@ -14,6 +14,7 @@
 		D1E6139D2149BC3900AD4E4E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D1E6139B2149BC3900AD4E4E /* LaunchScreen.storyboard */; };
 		D1E613A82149BC3900AD4E4E /* JunkiesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E613A72149BC3900AD4E4E /* JunkiesTests.swift */; };
 		D1E613B32149BC3900AD4E4E /* JunkiesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E613B22149BC3900AD4E4E /* JunkiesUITests.swift */; };
+		D1E613C12149D35600AD4E4E /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E613C02149D35600AD4E4E /* MapViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		D1E613AE2149BC3900AD4E4E /* JunkiesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JunkiesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1E613B22149BC3900AD4E4E /* JunkiesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JunkiesUITests.swift; sourceTree = "<group>"; };
 		D1E613B42149BC3900AD4E4E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D1E613C02149D35600AD4E4E /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 			children = (
 				D1E613922149BC3700AD4E4E /* AppDelegate.swift */,
 				D1E613942149BC3700AD4E4E /* ViewController.swift */,
+				D1E613C02149D35600AD4E4E /* MapViewController.swift */,
 				D1E613962149BC3700AD4E4E /* Main.storyboard */,
 				D1E613992149BC3900AD4E4E /* Assets.xcassets */,
 				D1E6139B2149BC3900AD4E4E /* LaunchScreen.storyboard */,
@@ -257,6 +260,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D1E613952149BC3700AD4E4E /* ViewController.swift in Sources */,
+				D1E613C12149D35600AD4E4E /* MapViewController.swift in Sources */,
 				D1E613932149BC3700AD4E4E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
