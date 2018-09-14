@@ -46,6 +46,34 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         let span = MKCoordinateSpan(latitudeDelta: 0.075, longitudeDelta: 0.075)
         let region = MKCoordinateRegion(center: coordinates, span: span)
         mapView.setRegion(region, animated: true)
+        
+        findNearest()
+    }
+    
+    func findNearest() {
+        let request = MKLocalSearchRequest()
+        request.naturalLanguageQuery = "Subway"
+        request.region = mapView.region
+        
+        let search = MKLocalSearch(request: request)
+        
+        search.start(completionHandler: {(response, error) in
+            
+            if error != nil {
+            print("An error occurred")
+            } else if response!.mapItems.count == 0 {
+                print("No matches found")
+            } else {
+                print("Matches found")
+                
+                for place in response!.mapItems {
+                    print("\(place.name)")
+                    print("\(place.phoneNumber)")
+                    
+                }
+            }
+            })
+        
     }
 
     /*
