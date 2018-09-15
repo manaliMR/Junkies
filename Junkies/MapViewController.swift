@@ -14,7 +14,10 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     @IBOutlet weak var mapView: MKMapView!
     
     var locationManager = CLLocationManager()
-
+    var userLocation = CLLocation()
+    
+    var finalLocation : CLLocation! = nil
+    var finalDistance : CLLocationDistance = 0.0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,12 +41,12 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        let userLocation = locations[0] as CLLocation
+        userLocation = locations[0] as CLLocation
         
-        locationManager.stopUpdatingLocation()
+       // locationManager.stopUpdatingLocation()
         
         let coordinates = CLLocationCoordinate2DMake(userLocation.coordinate.latitude, userLocation.coordinate.longitude)
-        let span = MKCoordinateSpan(latitudeDelta: 0.075, longitudeDelta: 0.075)
+        let span = MKCoordinateSpan(latitudeDelta: 0.03, longitudeDelta: 0.03)
         let region = MKCoordinateRegion(center: coordinates, span: span)
         mapView.setRegion(region, animated: true)
         
@@ -67,13 +70,29 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
                 print("Matches found")
                 
                 for place in response!.mapItems {
-                    print("\(place.name)")
-                    print("\(place.phoneNumber)")
-                    
+                    let placemark = CLLocation(latitude: place.placemark.coordinate.latitude, longitude: place.placemark.coordinate.longitude)
+                    if self.finalLocation == nil {
+                        self.finalLocation = placemark
+                        self.finalDistance = self.userLocation.distance(from: placemark)
+                    } else {
+                        if self.finalDistance > self.userLocation.distance(from: placemark) {
+                            self.finalLocation = placemark
+                            self.finalDistance = self.userLocation.distance(from: placemark)
+                        }
+                    }
                 }
+                //print(self.finalDistance)
+                self.addAnnotation()
             }
             })
         
+    }
+    
+    func addAnnotation() {
+        let anno = MKPointAnnotation()
+        anno.coordinate = self.finalLocation.coordinate
+        anno.title = "Subway"
+        mapView.addAnnotation(anno)
     }
 
     /*
