@@ -25,34 +25,42 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aA4-JW-EVa">
-                                <rect key="frame" x="78" y="247" width="100" height="100"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aA4-JW-EVa" userLabel="FoodPlace1">
+                                <rect key="frame" x="63" y="251" width="110" height="110"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="TimHortons"/>
+                                <state key="normal" image="TimHortons">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
                                 <connections>
                                     <action selector="FoodplaceOne:" destination="BYZ-38-t0r" eventType="touchUpInside" id="meI-cf-4UE"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hcq-dc-7sH">
-                                <rect key="frame" x="225" y="374" width="100" height="100"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hcq-dc-7sH" userLabel="FoodPlace2">
+                                <rect key="frame" x="207" y="379" width="110" height="110"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Burrito"/>
+                                <state key="normal" image="Burrito">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
                                 <connections>
                                     <action selector="FoodplaceFour:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RJU-eK-dlP"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3gQ-ST-4IP">
-                                <rect key="frame" x="225" y="247" width="100" height="100"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3gQ-ST-4IP" userLabel="FoodPlace3">
+                                <rect key="frame" x="207" y="251" width="110" height="110"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="McDonalds"/>
+                                <state key="normal" image="McDonalds">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
                                 <connections>
                                     <action selector="FoodplaceTwo:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uJm-DY-afJ"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QrP-Ga-vY7">
-                                <rect key="frame" x="78" y="374" width="100" height="100"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QrP-Ga-vY7" userLabel="FoodPlace4">
+                                <rect key="frame" x="63" y="379" width="110" height="110"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Subway"/>
+                                <state key="normal" image="Subway">
+                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
                                     <action selector="FoodplaceThree:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Wcv-83-yXG"/>
                                 </connections>
@@ -93,6 +101,9 @@
                                 <rect key="frame" x="115" y="617" width="145" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Open in Maps"/>
+                                <connections>
+                                    <action selector="OpenInMaps:" destination="1vc-0Y-c4n" eventType="touchUpInside" id="e3x-qq-Kc8"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Address" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Fs-23-cHQ">
                                 <rect key="frame" x="16" y="373" width="343" height="61"/>
@@ -107,6 +118,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="LmG-WG-Wqt"/>
                     <connections>
+                        <outlet property="addressLabel" destination="2Fs-23-cHQ" id="Tpk-1h-3FL"/>
+                        <outlet property="distanceLabel" destination="OHg-12-26v" id="Ygg-DO-Qnm"/>
                         <outlet property="mapView" destination="fju-Ph-Fy6" id="QCy-U6-38F"/>
                     </connections>
                 </viewController>
@@ -151,6 +164,12 @@
             <point key="canvasLocation" x="1966" y="-636"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Burrito" width="138" height="91"/>
+        <image name="McDonalds" width="137" height="92"/>
+        <image name="Subway" width="313" height="164"/>
+        <image name="TimHortons" width="131" height="96"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="SAe-oQ-zqD"/>
     </inferredMetricsTieBreakers>

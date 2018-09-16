@@ -12,13 +12,16 @@ import MapKit
 class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
     
     @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var distanceLabel: UILabel!
+    @IBOutlet weak var addressLabel: UILabel!
     
+   
     var locationManager = CLLocationManager()
     var userLocation = CLLocation()
     
     var finalLocation : CLLocation! = nil
     var finalDistance : CLLocationDistance = 0.0
-    
+    var finalAddress = " "
     override func viewDidLoad() {
         super.viewDidLoad()
         locateMe()
@@ -70,19 +73,25 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
                 print("Matches found")
                 
                 for place in response!.mapItems {
+                    
+                
                     let placemark = CLLocation(latitude: place.placemark.coordinate.latitude, longitude: place.placemark.coordinate.longitude)
+                    
                     if self.finalLocation == nil {
                         self.finalLocation = placemark
                         self.finalDistance = self.userLocation.distance(from: placemark)
+                        self.finalAddress = place.placemark.subThoroughfare! + " " + place.placemark.thoroughfare! + " " + place.placemark.locality! + " " + place.placemark.administrativeArea!
                     } else {
                         if self.finalDistance > self.userLocation.distance(from: placemark) {
                             self.finalLocation = placemark
                             self.finalDistance = self.userLocation.distance(from: placemark)
+                            self.finalAddress = place.placemark.subThoroughfare! + " " + place.placemark.thoroughfare! + " " + place.placemark.locality! + " " + place.placemark.administrativeArea!
                         }
                     }
                 }
                 //print(self.finalDistance)
                 self.addAnnotation()
+                self.updateView()
             }
             })
         
@@ -94,6 +103,19 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         anno.title = "Subway"
         mapView.addAnnotation(anno)
     }
+    
+    func updateView() {
+        addressLabel.text = finalAddress
+        distanceLabel.text = "\(finalDistance) meters"
+    }
+    
+    @IBAction func OpenInMaps(_ sender: Any) {
+        let coords = finalLocation.coordinate
+        let mapItem = MKMapItem(placemark: MKPlacemark(coordinate: coords))
+        mapItem.name = "Subway"
+        mapItem.openInMaps(launchOptions: [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeDriving])
+    
+    }
 
     /*
     // MARK: - Navigation
@@ -104,5 +126,5 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         // Pass the selected object to the new view controller.
     }
     */
-
+    
 }
